@@ -39,11 +39,17 @@ function onSubmit(e){
     //    temp.appendChild(document.createTextNode(`${myname.value} : ${myemail.value}`));
     //    userlist.appendChild(temp);
     // }
-
-    sessionStorage.setItem('name' , myname.value)
-    sessionStorage.setItem('email' , myemail.value)
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const obj = {
+        name : name,
+        email : email,
+    }
+    localStorage.setItem('userdetails', JSON.stringify(obj))
+    console.log(obj)
+    
     // clear filed
     myname.value='';
     myemail.value='';
-    
+   
 }
