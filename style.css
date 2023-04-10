@@ -1,0 +1,22 @@
+body{
+    background: url(wincol.png);
+    background-size: 100%;
+}
+form{
+    width: 50%;
+    border: rgb(61, 132, 191);
+    border-radius: 5px;
+    padding: 6px;
+    background-color:aliceblue;
+    margin-left: 250px;
+}
+h2{
+    text-align:center;
+    color:rgb(61, 132, 191);
+}
+p{
+    text-align: center;
+}
+button{
+    color: rgb(61, 132, 191);
+}

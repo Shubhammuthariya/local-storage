@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesteet" type="text/css" href="style.css">
+
+</head>
+<body>
+<form action="#" onsubmit="signup(event)">
+<h2 style="text-align:center; color:orange;">book a call </h2>
+<p style="text-align:center;">book a call slot and our representative will call you in 1 hour</p>
+<hr>
+<label for="fname">Name:</label><br>
+<input type="text" id="fname" name="fname" size="50"><br>
+<label for="mail">Email:</label><br>
+<input type="email" id="mail" name="mail" size="50"><br>
+<label for="phone">phone:</label><br>
+<input type="tel" id="phone" name="phone" size="50"><br>
+<label for="time">Time for Call:</label><br>
+<input type="date" id="time" name="date" size="25" >
+<input type="time" id="time2" name="time" size="25"><br><br>
+<input type="submit" value="GET A CALL"  >
+
+</form>
+<script>
+    function signup(event){
+        event.preventdefault();
+        console.log(event.target.fname.value);
+        console.log(event.target.mail.value);
+        console.log(event.target.phone.value);
+        console.log(event.target.date.value);
+        console.log(event.target.time.value);
+
+    }
+</script>
+</body>
+</html>
