@@ -45,7 +45,7 @@ function onSubmit(e){
         name : name,
         email : email,
     }
-    localStorage.setItem('userdetails', JSON.stringify(obj))
+    localStorage.setItem(email, JSON.stringify(obj))
     console.log(obj)
     
     // clear filed
