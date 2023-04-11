@@ -27,8 +27,7 @@ const user = document.querySelector('#users')
 // form submit event
 myform.addEventListener('submit', onSubmit);
 
-// delete event
-// user.addEventListener('click', removeli)
+//functionality for buttons
 function onSubmit(e){
     e.preventDefault();
     
@@ -42,17 +41,20 @@ function onSubmit(e){
        let temp = document.createElement('li')
        temp.appendChild(document.createTextNode(`${myname.value} : ${myemail.value}`));
        user.appendChild(temp);
+
        // create delete button
        let deletebtn = document.createElement('button')
        deletebtn.className = " btn btn-danger btn-md delete"
        deletebtn.appendChild(document.createTextNode('Delete'))
        temp.appendChild(deletebtn);
-
-       deletebtn.onclick = () =>{
-        localStorage.removeItem(email)
-        user.removeChild(temp)
-       }
-    }
+    
+     // create edit button
+    let edit = document.createElement('button')
+    edit.className = " btn btn-danger btn-md edit"
+    edit.appendChild(document.createTextNode('Edit'))
+    temp.appendChild(edit)  
+    
+    
     const name = e.target.name.value;
     const email = e.target.email.value;
     const obj = {
@@ -60,21 +62,25 @@ function onSubmit(e){
         email : email,
     }
     localStorage.setItem(email, JSON.stringify(obj))
-    
-    // console.log(obj)
-    
+
+    // functionality to delete new li from storage
+    deletebtn.onclick = () =>{
+    localStorage.removeItem(obj.email)
+    user.removeChild(temp)
+   }
+
+    // functionality to edit new li item
+    edit.onclick = () =>{
+        localStorage.removeItem(email)
+        user.removeChild(temp)
+        myname.value = obj.name;
+        myemail.value = obj.email;
+       }
+
+  }
     // clear filed
     myname.value='';
     myemail.value='';
    
 }
 
-// functionality to delete new li from storage
-// function removeli(e) {
-//     if(e.target.classList.contains('delete')){
-//         let del = e.target.parentElement;
-//         let del2 = e.target.email
-//         user.removeChild(del)
-//         localStorage.removeItem(del2)
-//     }
-// }
